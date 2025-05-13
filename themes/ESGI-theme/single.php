@@ -14,6 +14,7 @@ get_header();
                 <h1><?php the_title() ?></h1> <!-- Fait référence au post courant -->
                 <div class="post-meta">
                     <div class="post-author">
+                        <img src="<?= get_avatar_url($post->post_author) ?>" alt="<?= get_the_author_meta('nickname', $post->post_author)  ?>">
                         <?= get_the_author_meta('nickname', $post->post_author)  ?>
                     </div>
                     <time>
