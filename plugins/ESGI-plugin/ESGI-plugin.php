@@ -40,7 +40,11 @@ function esgi_duplicate_post()
         $args['post_status'] = 'draft';
         $args['post_title'] .= ' - DUPLICATE';
 
-        $new_post = wp_insert_post($args);
+        $new_post_id = wp_insert_post($args);
+
+        // ajout du post thumbnail
+        $original_thumbnail_id = get_post_thumbnail_id($original_post);
+        set_post_thumbnail($new_post_id, $original_thumbnail_id);
     }
 
     wp_safe_redirect(

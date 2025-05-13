@@ -1,0 +1,28 @@
+@use "../partials/fonts";
+@use "../partials/functions" as f;
+
+.site-footer {
+	font-family: fonts.$font1;
+	text-align: center;
+	margin-top: f.rem(58);
+	.row > div {
+		border-top: solid thin var(--light-grey);
+		padding: f.rem(80) 0;
+	}
+	#searchform {
+		margin: f.rem(34) 0;
+		input {
+			border: solid thin var(--light-grey);
+		}
+		[type="submit"] {
+			color: var(--text-color);
+			border: none;
+			background-color: transparent;
+			transition: color 0.3s;
+			@include fonts.text4;
+			&:hover {
+				color: var(--main-color);
+			}
+		}
+	}
+}

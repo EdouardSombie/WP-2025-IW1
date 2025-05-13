@@ -1,0 +1,34 @@
+@use "../partials/fonts";
+@use "../partials/functions" as f;
+
+.site-header {
+	font-family: fonts.$font2;
+	padding: f.rem(24) 0 f.rem(80);
+	@include fonts.text3;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		li {
+			&.current-menu-item,
+			&.current_page_parent,
+			&:hover {
+				a {
+					background-color: var(--main-color);
+					color: var(--white);
+				}
+			}
+			a {
+				padding: f.rem(9) f.rem(7);
+				display: block;
+				text-decoration: none;
+				line-height: 1;
+				color: var(--text-color);
+				margin: 0 f.rem(24);
+				transition: color 0.3s, background-color 0.3s;
+			}
+		}
+	}
+}

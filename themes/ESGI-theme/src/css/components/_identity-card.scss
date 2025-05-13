@@ -1,0 +1,36 @@
+@use "../partials/fonts";
+@use "../partials/functions" as f;
+
+.identity-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: f.rem(94) 0 f.rem(34);
+	img {
+		width: f.rem(102);
+		height: f.rem(102);
+		object-fit: cover;
+		object-position: center;
+		border-radius: 800px;
+		margin-bottom: f.rem(24);
+	}
+	h1 {
+		@include fonts.text1;
+		margin-top: 0;
+		margin-bottom: f.rem(32);
+		font-weight: 400;
+		line-height: 1;
+	}
+	h2 {
+		@include fonts.text2;
+		margin-top: 0;
+		margin-bottom: f.rem(24);
+		font-weight: 400;
+		line-height: 1;
+	}
+	footer {
+		ul {
+			@include f.social-menu;
+		}
+	}
+}

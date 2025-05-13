@@ -1,0 +1,41 @@
+@use "fonts";
+
+.archive,
+.post,
+.page {
+	@include fonts.text4;
+	h1 {
+		text-align: center;
+		@include fonts.text1;
+		margin-bottom: 2rem;
+	}
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include fonts.text6;
+		gap: 2rem;
+		margin-bottom: 3rem;
+		.post-author {
+			display: flex;
+			gap: 0.5rem;
+			align-items: center;
+
+			img {
+				aspect-ratio: 1/1;
+				width: 2rem;
+				display: block;
+				border-radius: 9999px;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+	.related_articles {
+		margin-top: 3rem;
+		h2,
+		h3 {
+			font-size: 1.25rem;
+		}
+	}
+}

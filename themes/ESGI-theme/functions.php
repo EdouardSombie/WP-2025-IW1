@@ -26,7 +26,7 @@ function esgi_add_theme_support()
 }
 
 // Ajout d'un filtre sur les titres
-add_filter('the_title', 'esgi_custom_title', 10, 1);
+//add_filter('the_title', 'esgi_custom_title', 10, 1);
 function esgi_custom_title($title)
 {
     return strtoupper($title);

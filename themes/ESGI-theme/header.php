@@ -10,14 +10,16 @@
 
 <body <?php body_class(); ?>>
 
-    <header>
-        <?php
-        if (has_nav_menu('primary_menu')) {
-            wp_nav_menu([
-                'container' => 'nav',
-                'container_class' => 'main-nav',
-                'theme_location' => 'primary_menu'
-            ]);
-        }
-        ?>
+    <header class="site-header">
+        <div class="container">
+            <?php
+            if (has_nav_menu('primary_menu')) {
+                wp_nav_menu([
+                    'container' => 'nav',
+                    'container_class' => 'main-nav',
+                    'theme_location' => 'primary_menu'
+                ]);
+            }
+            ?>
+        </div>
     </header>

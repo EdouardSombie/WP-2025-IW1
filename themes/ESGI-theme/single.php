@@ -7,21 +7,27 @@ get_header();
 
 ?>
 
-<main>
-    <h1><?php the_title() ?></h1> <!-- Fait référence au post courant -->
-    <div class="post-meta">
-        <div class="post-author">
-            <?= get_the_author_meta('nickname', $post->post_author)  ?>
+<main class="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1><?php the_title() ?></h1> <!-- Fait référence au post courant -->
+                <div class="post-meta">
+                    <div class="post-author">
+                        <?= get_the_author_meta('nickname', $post->post_author)  ?>
+                    </div>
+                    <time>
+                        <?= wp_date('j F Y', strtotime($post->post_date)) ?>
+                    </time>
+                </div>
+                <div class="post-thumbnail">
+                    <?php the_post_thumbnail() ?>
+                </div>
+                <div>
+                    <?php the_content() ?>
+                </div>
+            </div>
         </div>
-        <time>
-            <?= wp_date('j F Y', strtotime($post->post_date)) ?>
-        </time>
-    </div>
-    <div class="post-thumbnail">
-        <?php the_post_thumbnail() ?>
-    </div>
-    <div>
-        <?php the_content() ?>
     </div>
 </main>
 

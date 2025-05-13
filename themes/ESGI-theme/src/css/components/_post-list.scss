@@ -1,0 +1,67 @@
+@use "../partials/fonts";
+@use "../partials/functions" as f;
+
+.post-list {
+	@include f.reset-list;
+	margin-top: f.rem(32);
+	display: flex;
+	flex-direction: column;
+	border-top: solid thin var(--light-grey);
+	padding-top: f.rem(60);
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: f.rem(30);
+		}
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.3s;
+		&:hover {
+			color: var(--main-color);
+		}
+		display: flex;
+		justify-content: space-between;
+
+		span {
+			flex: 1;
+			font-size: f.rem(16);
+			line-height: 1.49;
+			letter-spacing: 0.1em;
+			padding-right: 2em;
+		}
+		time {
+			flex-shrink: 0;
+			@include fonts.text6;
+		}
+	}
+}
+
+.post-list-pagination {
+	text-align: center;
+	@include fonts.text6;
+	margin-top: f.rem(48);
+	a {
+		text-decoration: none;
+		color: var(--text-color);
+		transition: color 0.3s;
+		display: inline-block;
+		padding-left: 0.5em;
+		&:hover {
+			color: var(--main-color);
+		}
+	}
+	.current {
+		position: relative;
+		&::after {
+			content: "";
+			width: 100%;
+			height: 1px;
+			background-color: currentColor;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
