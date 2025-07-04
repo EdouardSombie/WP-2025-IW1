@@ -2,7 +2,7 @@
 
 $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
 $args = [
-    'post_type' => 'post', // valeur par défaut
+    'post_type' => $postType ?? 'post', // valeur par défaut
     'posts_per_page' => 2, // Serait mieux d'utiliser la valeur définie en bo
     'paged' => $paged // numéro de la page demandée
 ];
